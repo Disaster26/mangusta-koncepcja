@@ -15,7 +15,7 @@
 <link rel="icon" href="img/logo-mangusta.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 <!-- Dane strukturalne: tylko pewne informacje (nazwa, domena, logo). Adres, telefon i e-mail Mangusty do uzupełnienia, gdy firma je poda. -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"MANGUSTA Agencja Reklamowa","url":"https://www.mangusta.com.pl/","logo":"https://www.mangusta.com.pl/img/logo-mangusta.png","description":"Gadżety reklamowe, odzież firmowa i upominki biznesowe: doradztwo, inspiracje i realizacja.","knowsAbout":["gadżety reklamowe","odzież firmowa","upominki biznesowe","prezenty dla kontrahentów","znakowanie produktów"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Dlaczego przy produktach nie ma cen?","acceptedAnswer":{"@type":"Answer","text":"Cena gadżetu zależy od nakładu, techniki znakowania, liczby kolorów i terminu realizacji. Dlatego przygotowujemy wycenę do konkretnego zapytania, razem ze znakowaniem."}},{"@type":"Question","name":"Nie wiem jeszcze, co zamówić. Czy mogę zapytać?","acceptedAnswer":{"@type":"Answer","text":"Tak. Wystarczy podać okazję, liczbę osób, budżet na osobę i termin. Przygotujemy propozycje w kilku poziomach cenowych."}},{"@type":"Question","name":"Czy mogę zamówić kilka różnych produktów w jednym zamówieniu?","acceptedAnswer":{"@type":"Answer","text":"Tak. Koszulki, torby, bidony czy kubki można zebrać w jedno zapytanie, a całość koordynuje jedna osoba po stronie agencji."}},{"@type":"Question","name":"Czy mogę sam przejrzeć katalogi dostawców?","acceptedAnswer":{"@type":"Answer","text":"Tak, linki do katalogów są na stronie. Jeśli nie chcesz przeglądać setek pozycji, opisz potrzebę w formularzu, a wybór przygotujemy za Ciebie."}}]}</script>
@@ -50,16 +50,17 @@
 
 <section class="hero">
   <div class="hero-foto">
-    <img src="img/hero.webp" alt="Dwa pudełka prezentowe z kokardami na niebieskim tle" fetchpriority="high" width="1600" height="1216">
-    
+    <figure class="hf hf-1"><img src="img/hero.webp" alt="Dwa pudełka prezentowe z kokardami" fetchpriority="high" width="1600" height="1216"></figure>
+    <figure class="hf hf-2"><img src="img/odz-logo.webp" alt="Czarna koszulka z małym logo na piersi" width="1000" height="667"></figure>
+    <figure class="hf hf-3"><img src="img/real-haft.webp" alt="Maszyna hafciarska wyszywająca logo" width="667" height="1000"></figure>
   </div>
   <div class="wrap hero-in">
     <div class="hero-txt">
       <h1>Gadżety reklamowe, odzież firmowa i prezenty dla firm</h1>
-      <p class="lead">Dobieramy upominki do okazji, liczby osób i budżetu, a potem znakujemy je Twoim logo: nadrukiem, haftem albo grawerem.<span class="lead-2"> Dobieramy produkty, przygotowujemy znakowanie i dostarczamy gotowe zamówienie.</span></p>
+      <p class="lead">Dobieramy upominki do okazji, liczby osób i budżetu, znakujemy je Twoim logo i dostarczamy gotowe zamówienie.</p>
       <div class="hero-cta">
-        <a class="btn btn-g" href="#kreator">Opowiedz nam o swoim projekcie</a>
-        <a class="btn btn-linia" href="#inspiracje">Szukam inspiracji</a>
+        <a class="btn btn-g btn-duzy" href="#kreator">Opowiedz nam o swoim projekcie<svg class="ik" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5"/></svg></a>
+        <a class="link-insp" href="#inspiracje">albo zobacz pomysły według okazji</a>
       </div>
     </div>
   </div>
@@ -100,17 +101,11 @@
     </div>
 
     <div class="poziomy" aria-label="Poziomy oferty">
-      <div class="poziom">
-        <img src="img/poz-eko.webp" alt="Bawełniana torba na zakupy" loading="lazy" width="900" height="600">
-        <div><p class="poz-n">Ekonomiczny</p><p>Duże nakłady, rozsądny koszt na osobę: torby, smycze, długopisy, notesy.</p></div>
-      </div>
-      <div class="poziom">
-        <img src="img/poz-standard.webp" alt="Kubek z kawą, notes i długopis" loading="lazy" width="667" height="1000">
-        <div><p class="poz-n">Standard</p><p>Rzeczy, których się używa: kubki termiczne, bidony, notesy w twardej oprawie, koszulki.</p></div>
-      </div>
-      <div class="poziom">
-        <img src="img/poz-premium.webp" alt="Ciemne pudełko prezentowe ze złotą kokardą" loading="lazy" width="900" height="596">
-        <div><p class="poz-n">Premium</p><p>Upominki, które budują relację: skóra, pióra, zestawy prezentowe w eleganckim opakowaniu.</p></div>
+      <h3 class="poz-t">Trzy poziomy budżetu</h3>
+      <div class="poz-rzad">
+        <div class="poziom"><p class="poz-n">Ekonomiczny</p><p>Duże nakłady, rozsądny koszt na osobę: torby, smycze, długopisy, notesy.</p></div>
+        <div class="poziom"><p class="poz-n">Standard</p><p>Rzeczy, których się używa: kubki termiczne, bidony, notesy w twardej oprawie, koszulki.</p></div>
+        <div class="poziom"><p class="poz-n">Premium</p><p>Upominki, które budują relację: skóra, pióra, zestawy prezentowe w eleganckim opakowaniu.</p></div>
       </div>
     </div>
   </div>
@@ -121,7 +116,7 @@
   <div class="wrap">
     <div class="naglowek">
       <h2>Pomysły według okazji</h2>
-      <p class="lead-s">Kilka sprawdzonych kierunków dla każdej okazji. Kliknij „+”, a pomysł trafi do Twojego zapytania na dole strony. Cenę podajemy w wycenie, bo zależy od nakładu, znakowania i terminu.</p>
+      <p class="lead-s">Wybierz okazję i dodaj pomysły do zapytania. Cenę podajemy w wycenie, bo zależy od nakładu, znakowania i terminu.</p>
     </div>
     <div class="chipy kat-chipy" role="tablist" aria-label="Kategorie inspiracji"></div>
     <div class="insp">
@@ -413,13 +408,12 @@
     </div>
     <div>
       <h2>Kontakt</h2>
-      <!-- Dane kontaktowe Mangusty nieznane: miejsca do uzupełnienia, nic nie wymyślone. -->
+      <!-- Dane kontaktowe Mangusty nieznane: nic nie wymyślone, telefon/e-mail/adres do wstawienia. -->
+      <p class="kontakt-lead">Najszybciej przez formularz: odpowiadamy z propozycjami i wyceną ze znakowaniem.</p>
       <ul class="kontakt-dane">
-        <li><span>Telefon</span><b class="slot">do uzupełnienia</b></li>
-        <li><span>E-mail</span><b class="slot">do uzupełnienia</b></li>
-        <li><span>Adres / obszar działania</span><b class="slot">do uzupełnienia</b></li>
         <li><span>Strona</span><b>www.mangusta.com.pl</b></li>
       </ul>
+      <p class="kontakt-uw">Telefon, e-mail i adres zostaną tu wstawione po uzupełnieniu danych przez Mangustę.</p>
       <a class="btn btn-g" href="#kreator">Wyślij zapytanie przez formularz</a>
     </div>
   </div>
@@ -438,6 +432,6 @@
   <a class="btn btn-g" href="#kreator">Zapytanie <span class="mob-ile" id="mobIle" hidden></span></a>
 </div>
 
-<script src="app.js?v=2"></script>
+<script src="app.js?v=3"></script>
 </body>
 </html>

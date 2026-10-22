@@ -19,6 +19,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')zamknij()});
 
 /* ---------- inspiracje ---------- */
 const POZ=['ekonomiczny','standard','premium'];
+const IK_PLUS='<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg>',IK_OK='<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>';
 const KAT=[
   {id:'targi',n:'Targi i konferencje',t:'Gadżety na targi i konferencje',img:'kat-targi',alt:'Hala targowa ze stoiskami',o:'Coś dla każdego odwiedzającego stoisko i coś lepszego dla gości, z którymi naprawdę rozmawiasz.',p:[
     ['Smycze z nadrukiem','do identyfikatorów uczestników',0],
@@ -64,7 +65,7 @@ KAT.forEach((k,i)=>{const b=document.createElement('button');b.type='button';b.t
 function pokaz(id){
   const k=KAT.find(x=>x.id===id)||KAT[0];aktKat=k;
   $$('.kat-chipy button').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.id===k.id)));
-  const img=$('#inspImg');img.src='img/'+k.img+'.webp';img.alt=k.alt;
+  const img=$('#inspImg'),src='img/'+k.img+'.webp';if(!img.getAttribute('src').endsWith(k.img+'.webp')){img.classList.add('zmiana');const nowe=new Image();nowe.onload=nowe.onerror=()=>{img.src=src;img.alt=k.alt;requestAnimationFrame(()=>img.classList.remove('zmiana'))};nowe.src=src}else img.alt=k.alt;
   $('#inspTytul').textContent=k.t;$('#inspOpis').textContent=k.o;
   const ul=$('#pomysly');ul.innerHTML='';
   k.p.forEach(([n,z,p])=>{
@@ -73,8 +74,9 @@ function pokaz(id){
     li.innerHTML=`<div><b></b><span></span><em class="poz${p===2?' p2':''}">${POZ[p]}</em></div><button type="button" class="dodaj"></button>`;
     li.querySelector('b').textContent=n;li.querySelector('span').textContent=z;
     const btn=li.querySelector('.dodaj');
-    const ustaw=()=>{const on=wybrane.has(key);li.classList.toggle('wybrany',on);btn.textContent=on?'✓':'+';btn.setAttribute('aria-label',(on?'Usuń z zapytania: ':'Dodaj do zapytania: ')+n);btn.setAttribute('aria-pressed',String(on))};
-    btn.addEventListener('click',()=>{if(wybrane.has(key))wybrane.delete(key);else wybrane.set(key,{n,kat:k.t});ustaw();odswiezListe();podsumuj()});
+    const ustaw=()=>{const on=wybrane.has(key);li.classList.toggle('wybrany',on);btn.innerHTML=on?IK_OK:IK_PLUS;btn.setAttribute('aria-label',(on?'Usuń z zapytania: ':'Dodaj do zapytania: ')+n);btn.setAttribute('aria-pressed',String(on))};
+    btn.addEventListener('click',e=>{e.stopPropagation();if(wybrane.has(key))wybrane.delete(key);else wybrane.set(key,{n,kat:k.t});ustaw();odswiezListe();podsumuj()});
+    li.addEventListener('click',()=>btn.click());
     ustaw();ul.appendChild(li);
   });
 }
